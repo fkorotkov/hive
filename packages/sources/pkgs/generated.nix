@@ -21,6 +21,18 @@
     });
     date = "2023-03-21";
   };
+  klipper-ercf-software = {
+    pname = "klipper-ercf-software";
+    version = "4d3383fd36854b04b511731998f42216240424bd";
+    src = fetchFromGitHub ({
+      owner = "moggieuk";
+      repo = "ERCF-Software-V3";
+      rev = "4d3383fd36854b04b511731998f42216240424bd";
+      fetchSubmodules = false;
+      sha256 = "sha256-hLNnz3f97NA7jtsoMFuEeG6bIZ0TEq7rIitb7eFGZac=";
+    });
+    date = "2023-03-21";
+  };
   klipper-led_effect = {
     pname = "klipper-led_effect";
     version = "35cf587fe958fe15a07c11b60564856582890460";

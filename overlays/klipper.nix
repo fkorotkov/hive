@@ -6,6 +6,7 @@ final: prev: {
 
     postInstall = ''
       ln -sf "${final.klipper-led_effect}/lib/klipper-led_effect/led_effect.py" "$out/lib/klipper/extras/led_effect.py"
+      ln -sf ${final.klipper-ercf-software}/lib/klipper-ercf-software/extras/*.py "$out/lib/klipper/extras/"
     '';
   });
 }

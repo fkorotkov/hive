@@ -34,6 +34,26 @@
         },
         "version": "52f4e20c26039a67da7c223fc72fd34a8ef9a294"
     },
+    "klipper-ercf-software": {
+        "cargoLocks": null,
+        "date": "2023-03-21",
+        "extract": null,
+        "name": "klipper-ercf-software",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "moggieuk",
+            "repo": "ERCF-Software-V3",
+            "rev": "4d3383fd36854b04b511731998f42216240424bd",
+            "sha256": "sha256-hLNnz3f97NA7jtsoMFuEeG6bIZ0TEq7rIitb7eFGZac=",
+            "type": "github"
+        },
+        "version": "4d3383fd36854b04b511731998f42216240424bd"
+    },
     "klipper-led_effect": {
         "cargoLocks": null,
         "date": "2023-02-04",

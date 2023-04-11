@@ -7,6 +7,7 @@
   klipperCfg = config.services.klipper;
   moonrakerCfg = config.services.moonraker;
   gcodePath = "${moonrakerCfg.stateDir}/gcodes";
+  klipperVarPath = "${moonrakerCfg.stateDir}/klipper_vars.cfg";
   rpiFirmware =
     (pkgs.klipper-firmware.override {
       mcu = "rpi";
@@ -73,6 +74,10 @@ in {
     # TODO make function to have list of files to combine
     settings = {
       "include /etc/klipper.d/*.cfg" = {};
+      # "include ${moonrakerCfg.stateDir}/klipper_vars.cfg" = {};
+      save_variables = {
+        filename = klipperVarPath;
+      };
       virtual_sdcard = {
         path = gcodePath;
       };

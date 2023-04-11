@@ -2,24 +2,7 @@
   pkgs,
   lib,
   ...
-}: let
-  chromium = pkgs.stdenv.mkDerivation rec {
-    name = "Chromium";
-    version = "101.0.4904.0";
-    revision = "973630";
-    src = builtins.fetchurl {
-      url = "https://storage.googleapis.com/chromium-browser-snapshots/Mac_Arm/${revision}/chrome-mac.zip";
-      sha256 = "16qk18xydaf69xwz5shdz3p4h4ggrcgcmman3dhd2xbhnksf1cgd";
-    };
-    sourceRoot = "chrome-mac/Chromium.app";
-    buildInputs = with pkgs; [undmg unzip];
-    phases = ["installPhase"];
-    installPhase = ''
-      mkdir -p "$out/Applications/${name}.app"
-      cp -pR * "$out/Applications/${name}.app"
-    '';
-  };
-in {
+}: {
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
@@ -38,7 +21,6 @@ in {
       eamodio.gitlens
       editorconfig.editorconfig
       eg2.vscode-npm-script
-      # erd0s.terraform-autocomplete
       golang.go
       graphql.vscode-graphql
       graphql.vscode-graphql-execution
@@ -48,7 +30,6 @@ in {
       ivory-lab.jenkinsfile-support
       jnoortheen.nix-ide
       jq-syntax-highlighting.jq-syntax-highlighting
-      # kamadorueda.alejandra
       lunuan.kubernetes-templates
       maarti.jenkins-doc
       ms-azuretools.vscode-docker
